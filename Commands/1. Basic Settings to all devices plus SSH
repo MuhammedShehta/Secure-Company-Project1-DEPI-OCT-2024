@@ -1,0 +1,33 @@
+1. Basic Settings to all devices plus SSH on the Routers AND L3 Switches 
+ena 
+Config t
+
+hostname  .........
+banner motd $NO UNAUTHORIZED ACCESS!!!$
+
+enable password Cisco
+
+Line console 0
+Password Cisco
+Login 
+exec-timeout 3 0
+logging synchronous
+exit 
+
+no ip domain-lookup 
+Service password-encryption
+
+username cisco password cisco
+ip domain-name cisco.com
+
+crypto key generate rsa
+1024
+
+ip ssh version 2 
+
+line vty 0 15 
+login local 
+transport input ssh 
+ex
+
+do wr
