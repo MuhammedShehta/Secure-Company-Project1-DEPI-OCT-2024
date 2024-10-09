@@ -1,0 +1,63 @@
+int range f0/1-2, 
+switchport mode trunk
+exit
+
+vlan 10
+name MGT
+VLAN 20
+NAME LAN
+VLAN 50
+NAME WLAN
+VLAN 70
+NAME VoIP
+VLAN 199
+NAME BLACKHOLE
+exit
+
+int range fa0/3-4
+switchport mode access
+switchport access vlan 20
+exit
+
+int range fa0/5-6
+switchport mode access
+switchport access vlan 70
+exit
+
+int range fa0/7
+switchport mode access
+switchport access vlan 50
+exit
+
+int range f0/8-24, gig0/1-2
+switchport mode access
+switchport access vlan 199
+shutdown
+exit
+
+do wr
+
+############################ MLT1 & MLT2 ########################################
+int range gig1/0/3-8
+switchport mode trunk
+exit
+
+vlan 10
+name MGT
+VLAN 20
+NAME LAN
+VLAN 50
+NAME WLAN
+VLAN 70
+NAME VoIP
+VLAN 90
+NAME INSIDE-SERVER
+exit
+
+do wr
+################################# modification ############################################
+INT range fa0/5-6
+no switchport access vlan 70
+switchport voice vlan 70
+exit
+do wr
