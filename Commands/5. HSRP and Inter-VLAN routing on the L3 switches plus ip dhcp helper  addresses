@@ -1,0 +1,43 @@
+CORE-SW1 
+***************************************************
+
+interface Vlan10
+ ip address 192.168.10.3 255.255.255.0
+ ip helper-address 10.11.11.38
+ standby 10 ip 192.168.10.1
+!
+interface Vlan20
+ ip address 172.16.0.3 255.255.0.0
+ ip helper-address 10.11.11.38
+ standby 20 ip 172.16.0.1
+!
+interface Vlan50
+ ip address 10.20.0.2 255.255.0.0
+ ip helper-address 10.11.11.38
+ standby 50 ip 10.20.0.1
+!
+interface Vlan90
+ ip address 10.11.11.34 255.255.255.224
+ standby 90 ip 10.11.11.33
+******************************************************
+CORE-SW1 
+***************************************************
+
+interface Vlan10
+ ip address 192.168.10.2 255.255.255.0
+ ip helper-address 10.11.11.38
+ standby 10 ip 192.168.10.1
+!
+interface Vlan20
+ ip address 172.16.0.2 255.255.0.0
+ ip helper-address 10.11.11.38
+ standby 20 ip 172.16.0.1
+!
+interface Vlan50
+ ip address 10.20.0.3 255.255.0.0
+ ip helper-address 10.11.11.38
+ standby 50 ip 10.20.0.1
+!
+interface Vlan90
+ ip address 10.11.11.35 255.255.255.224
+ standby 90 ip 10.11.11.33
