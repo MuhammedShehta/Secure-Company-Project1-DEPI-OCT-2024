@@ -1,0 +1,26 @@
+10-INSPECTION POLICIES 
+
+
+FW1
+************************************************
+access-list RES extended permit icmp any any
+access-list RES extended permit tcp any any eq 80
+access-list RES extended permit tcp any any eq 53
+access-list RES extended permit udp any any eq 53
+
+access-group RES in interface DMZ
+access-group RES in interface OUTSIDE1
+access-group RES in interface OUTSIDE2
+do wr
+
+FW2
+****************************************************
+!
+access-list RES extended permit icmp any any
+access-list RES extended permit tcp any any eq 80
+access-list RES extended permit tcp any any eq 53
+access-list RES extended permit udp any any eq 53
+!
+!
+access-group RES in interface OUTSIDE1
+access-group RES in interface OUTSIDE2
