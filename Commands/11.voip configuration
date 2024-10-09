@@ -1,0 +1,58 @@
+voip configuration
+*****************************************
+
+Router>ena
+Router#config t
+Router(config)#int f0/0
+Router(config-if)#no shut
+Router(config)#int f0/0.70
+Router(config-subif)#ip address 172.30.0.1
+Router(config-subif)#ip address 172.30.0.1 255.255.0.0
+Router(config-subif)#encapsulation dot1q 70
+Router(config-subif)#ip address 172.30.0.1 255.255.0.0
+Router(config-subif)#ex
+Router(config)#service dhcp
+Router(config)#ip dhcp pool VOIP.POOL
+Router(dhcp-config)#network 172.30.0.0 255.255.0.0
+Router(dhcp-config)#default-router 172.30.0.1
+Router(dhcp-config)#option 150 ip 172.30.0.1
+Router(dhcp-config)#ex
+Router(config)#telephony-service 
+Router(config-telephony)#max-ephones 30
+Router(config-telephony)#max-dn 30
+Router(config-telephony)#ip source-address 172.30.0.1 port 2000
+Router(config-telephony)#auto assign 1 to 30
+Router(config-telephony)#ex
+Router(config)#ephone-dn 1
+
+Router(config-ephone-dn)#number 401
+Router(config-ephone-dn)#ephone-dn 2
+Router(config-ephone-dn)#number 402
+Router(config-ephone-dn)#ephone-dn 3
+
+
+Router(config-ephone-dn)#ephone-dn 3
+Router(config-ephone-dn)#number 403
+Router(config-ephone-dn)#ephone-dn 4
+
+Router(config-ephone-dn)#number 404
+Router(config-ephone-dn)#ephone-dn 5
+
+Router(config-ephone-dn)#number 405
+Router(config-ephone-dn)#ephone-dn 6
+
+
+Router(config-ephone-dn)#number 406
+Router(config-ephone-dn)#ephone-dn 7
+
+
+Router(config-ephone-dn)#number 407
+Router(config-ephone-dn)#ephone-dn 8
+
+
+Router(config-ephone-dn)#number 408
+Router(config-ephone-dn)#ephone-dn 9
+
+
+Router(config-ephone-dn)#number 409
+Router(config-ephone-dn)#ephone-dn 10
