@@ -1,0 +1,70 @@
+*******************************
+FW1
+*******************************
+object network INSIDE1-OUTSIDE1
+subnet 172.16.0.0 255.255.0.0
+nat (INSIDE1, OUTSIDE1) dynamic interface 
+
+object network INSIDE2-OUTSIDE1
+subnet 172.16.0.0 255.255.0.0
+nat (INSIDE2, OUTSIDE1) dynamic interface
+
+object network INSIDEw1-OUTSIDEw1
+subnet 10.20.0.0 255.255.0.0
+nat (INSIDE1, OUTSIDE1) dynamic interface
+object network INSIDEw2-OUTSIDE1
+subnet 10.20.0.0 255.255.0.0
+nat (INSIDE2, OUTSIDE1) dynamic interface
+
+object network INSIDE1-OUTSIDE2
+subnet 172.16.0.0 255.255.0.0
+nat (INSIDE1, OUTSIDE2) dynamic interface
+
+object network INSIDE2-OUTSIDE2
+subnet 172.16.0.0 255.255.0.0
+nat (INSIDE2, OUTSIDE2) dynamic interface
+
+object network INSIDEw1-OUTSIDEw2
+subnet 10.20.0.0 255.255.0.0
+nat (INSIDE1, OUTSIDE2) dynamic interface 
+object network INSIDEw2-OUTSIDEw2
+subnet 10.20.0.0 255.255.0.0
+nat (INSIDE2, OUTSIDE2) dynamic interface
+
+
+object network DMZ-OUTSIDE1
+subnet 10.11.11.0 255.255.255.224
+nat (DMZ, OUTSIDE1) dynamic interface
+object network DMZ-OUTSIDE2
+subnet 10.11.11.0 255.255.255.224
+nat (DMZ, OUTSIDE2) dynamic interface
+WR MEM
+*****************************************
+FW2
+*****************************************
+!
+object network INSIDE1-OUTSIDE1
+ subnet 172.16.0.0 255.255.0.0
+ nat (INSIDE1,OUTSIDE1) dynamic interface
+object network INSIDE1-OUTSIDE2
+ subnet 172.16.0.0 255.255.0.0
+ nat (INSIDE1,OUTSIDE2) dynamic interface
+object network INSIDE2-OUTSIDE1
+ subnet 172.16.0.0 255.255.0.0
+ nat (INSIDE2,OUTSIDE1) dynamic interface
+object network INSIDE2-OUTSIDE2
+ subnet 172.16.0.0 255.255.0.0
+ nat (INSIDE2,OUTSIDE2) dynamic interface
+object network INSIDEw1-OUTSIDEw1
+ subnet 10.20.0.0 255.255.0.0
+ nat (INSIDE1,OUTSIDE1) dynamic interface
+object network INSIDEw1-OUTSIDEw2
+ subnet 10.20.0.0 255.255.0.0
+ nat (INSIDE1,OUTSIDE2) dynamic interface
+object network INSIDEw2-OUTSIDE1
+ subnet 10.20.0.0 255.255.0.0
+ nat (INSIDE2,OUTSIDE1) dynamic interface
+object network INSIDEw2-OUTSIDEw2
+ subnet 10.20.0.0 255.255.0.0
+ nat (INSIDE2,OUTSIDE2) dynamic interface
+!
