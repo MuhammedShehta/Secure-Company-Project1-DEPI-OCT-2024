@@ -1,0 +1,69 @@
+************************
+FW1
+************************
+ena
+config t
+hostname FWL1
+int gig1/3
+no shut
+ip address 10.2.2.2 255.255.255.252
+nameif INSIDE1
+SECURITY-LEVEL 100
+EX
+int gig1/4
+no shut
+ip address 10.2.2.10 255.255.255.252
+nameif INSIDE2
+SECURITY-LEVEL 100
+EX
+int gig1/5
+no shut
+ip address 10.11.11.7 255.255.255.224
+nameif DMZ
+SECURITY-LEVEL 70
+EX
+int gig1/1
+no shut
+ip address 105.100.50.2 255.255.255.224
+nameif OUTSIDE1
+SECURITY-LEVEL 0
+EX
+int gig1/2
+no shut
+ip address 197.200.100.2 255.255.255.252
+nameif OUTSIDE2
+SECURITY-LEVEL 0
+EX
+DO WR
+WR MEM
+*******************************
+FW2
+*******************************
+ena
+config t
+hostname FWL2
+int gig1/3
+no shut
+ip address 10.2.2.6 255.255.255.252
+nameif INSIDE1
+SECURITY-LEVEL 100
+EX
+int gig1/4
+no shut
+ip address 10.2.2.14 255.255.255.252
+nameif INSIDE2
+SECURITY-LEVEL 100
+EX
+int gig1/1
+no shut
+ip address 105.100.50.6 255.255.255.224
+nameif OUTSIDE1
+SECURITY-LEVEL 0
+EX
+int gig1/2
+no shut
+ip address 197.200.100.6 255.255.255.252
+nameif OUTSIDE2
+SECURITY-LEVEL 0
+EX
+WR MEM
