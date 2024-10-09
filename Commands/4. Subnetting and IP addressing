@@ -1,0 +1,28 @@
+MLT1 
+
+IP Routing
+int gig1/0/1
+no switchport 
+no shut
+ip address 10.2.2.1 255.255.255.252
+int gig1/0/2
+no switchport 
+no shut
+ip address 10.2.2.5 255.255.255.252
+ex
+do wr
+***************************************
+MLT2
+
+IP Routing
+int gig1/0/1
+no switchport 
+no shut
+ip address 10.2.2.9 255.255.255.252
+int gig1/0/2
+no switchport 
+no shut
+ip address 10.2.2.13 255.255.255.252
+ex
+do wr
+
