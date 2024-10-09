@@ -1,0 +1,27 @@
+FOR SERVERROOM SWITCH
+**********************
+
+INT range FA0/3-6, FA0/8-24
+spanning-tree portfast 
+spanning-tree bpduguard enable 
+ex
+do wr
+
+********************
+for all switches
+******************** 
+INT range FA0/3-24
+spanning-tree portfast 
+spanning-tree bpduguard enable 
+ex
+do wr
+
+******************
+DMZ
+******************
+
+INT range FA0/1-24
+spanning-tree portfast 
+spanning-tree bpduguard enable 
+ex
+do wr
