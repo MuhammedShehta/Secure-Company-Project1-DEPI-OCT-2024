@@ -1,0 +1,19 @@
+MLT1
+*******************
+interface range gig1/0/9-11
+channel-group 1 mode active
+ex
+interface port-channel 1
+switchport mode trunk 
+ex
+do wr
+
+MLT2
+*******************
+interface range gig1/0/9-11
+channel-group 1 mode passive
+ex
+interface port-channel 1
+switchport mode trunk 
+ex
+do wr
