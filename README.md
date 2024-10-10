@@ -9,6 +9,9 @@ Cytonn Innovation Ltd has a workforce of 600 staff and is preparing to move to a
 Prior to the move, a new network service needs to be designed and implemented. The company aims to ensure robust security against internal and external threats by implementing a multi-layered security approach, including a firewall with distinct security zones: outside, inside, and DMZ.
 
 ## 3.Network Devices Description
+
+![Uploading Screenshot 2024-10-10 040320.png…]()
+
 ### Cisco ASA Firewall
 Cisco Adaptive Security Appliance (ASA) is a security device that combines firewall, VPN, 
     and other network security services in a single platform. It provides advanced threat defense, intrusion prevention, 
@@ -94,6 +97,9 @@ Public Addresses:
 •	   - Safaricom: 197.200.100.0/30
 
 ## 5.Technologies Implemented
+
+![Screenshot 2024-10-10 040008](https://github.com/user-attachments/assets/9926cc73-50cb-4617-a3fa-271fa4920214)
+
 ### Design Tool: Cisco Packet Tracer
 Cisco Packet Tracer was used for network design and simulation before the actual deployment. 
     It allowed for a virtual environment to test configurations, create network topologies, and simulate device behavior 
