@@ -1,4 +1,5 @@
-int range f0/1-2, 
+############################ MK-SW, HR-SW, FINANCE-SW, ADMIN-SW, ICT-SW########################################
+int range fa0/1-2 
 switchport mode trunk
 exit
 
@@ -6,12 +7,12 @@ vlan 10
 name MGT
 VLAN 20
 NAME LAN
-VLAN 5
+VLAN 50
 NAME WLAN
 VLAN 70
 NAME VoIP
 VLAN 199
-NAME BLACKHOLE
+NAME Blachole
 exit
 
 int range fa0/3-4
@@ -29,10 +30,32 @@ switchport mode access
 switchport access vlan 50
 exit
 
-int range f0/8-24, gig0/1-2
+do wr
+############################ SERVER-SW ########################################
+int range fa0/1-2, fa0/7
+switchport mode trunk
+exit
+
+vlan 10
+name MGT
+VLAN 20
+NAME LAN
+VLAN 50
+NAME WLAN
+VLAN 70
+NAME VoIP
+VLAN 90
+NAME INSIDE-SERVERS
+exit
+
+int range fa0/3-5
 switchport mode access
-switchport access vlan 199
-shutdown
+switchport access vlan 90 
+exit
+
+int fa0/6
+switchport mode access
+switchport access vlan 50
 exit
 
 do wr
@@ -51,11 +74,11 @@ NAME WLAN
 VLAN 70
 NAME VoIP
 VLAN 90
-NAME INSIDE-SERVER
+NAME INSIDE-SERVERS
 exit
 
 do wr
-################################# modification ############################################
+################################# modification ########################################
 INT range fa0/5-6
 no switchport access vlan 70
 switchport voice vlan 70
