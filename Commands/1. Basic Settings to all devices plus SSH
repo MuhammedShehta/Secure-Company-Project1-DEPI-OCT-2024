@@ -1,33 +1,48 @@
 1. Basic Settings to all devices plus SSH on the Routers AND L3 Switches 
-ena 
-Config t
+ena
+conf t
+hostname DMZ-SW
 
-hostname  .........
-banner motd $NO UNAUTHORIZED ACCESS!!!$
-
-enable password Cisco
-
-Line console 0
-Password Cisco
-Login 
-exec-timeout 3 0
+line console 0
+password cisco
+login
 logging synchronous
-exit 
+exec-timeout 3 0
+exit
 
-no ip domain-lookup 
-Service password-encryption
+enable password cisco
+banner motd &
+
+Name: Mohamed Shehta Mohamed Ahmed 
+ID: 1111329267
+Group: SHR1-ISS2-S1e
+Track: Cisco Network Administrator 
+Company: AST
+Instructor: ENG. Sameh Kamal Elshamy
+project: Secure Company Network
+
+password: cisco 
+&
+no ip domain-lookup
+
+service password-encryption
 
 username cisco password cisco
 ip domain-name cisco.com
 
-crypto key generate rsa
-1024
+crypto key generate rsa general-keys modulus 1024
+ip ssh version 2
 
-ip ssh version 2 
+line vty 0 15
+login local
+transport input ssh
+exit
+
+access-list 1 permit 192.168.10.0 0.0.0.255
+access-list 1 deny any
 
 line vty 0 15 
-login local 
-transport input ssh 
-ex
+access-class 1 in
+exit
 
 do wr
