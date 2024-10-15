@@ -173,6 +173,10 @@ The Cisco ASA firewall was configured to secure the network by controlling incom
 After configuring the entire network, thorough testing was conducted to ensure proper communication between all devices and verify that all configurations were applied correctly. This testing included end-to-end connectivity checks, security audits, and performance evaluations.
 
 ### 6. Conclusion
+
+![image](https://github.com/user-attachments/assets/e6027e05-1bfa-4a99-866c-bf84d2db921f)
+
+
 The design and implementation of a secure network system for Cytonn Innovation Ltd is critical to ensuring operational efficiency and safeguarding sensitive data. By employing a structured approach with robust security measures, the new network will support the company's growth and adaptability in the digital landscape.
 
 
