@@ -10,9 +10,6 @@ Prior to the move, a new network service needs to be designed and implemented. T
 
 ## 3.Network Devices Description
 
-![Screenshot 2024-10-10 040320](https://github.com/user-attachments/assets/110af8ba-297f-4c6e-b13f-a1d8d94509d8)
-
-
 ### Cisco ASA Firewall
 #### Cisco Adaptive Security Appliance (ASA) is a security device that combines firewall, VPN, and other network security services in a single platform. It provides advanced threat defense, intrusion prevention, and protects the network from attacks by monitoring, controlling, and filtering traffic. Key features include:
 
