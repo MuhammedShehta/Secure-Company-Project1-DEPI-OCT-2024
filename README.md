@@ -91,8 +91,6 @@ DMZ: 10.11.11.0/27
 
 ## 5.Technologies Implemented
 
-![Screenshot 2024-10-10 040008](https://github.com/user-attachments/assets/9926cc73-50cb-4617-a3fa-271fa4920214)
-
 ### Design Tool: Cisco Packet Tracer
 Cisco Packet Tracer was used for network design and simulation before the actual deployment. It allowed for a virtual environment to test configurations, create network topologies, and simulate device behavior to ensure functionality before real-world implementation.
 
